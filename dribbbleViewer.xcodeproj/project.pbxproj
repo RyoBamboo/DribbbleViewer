@@ -112,11 +112,12 @@
 		237F6C0119C886BB008C31E6 /* dribbbleViewer */ = {
 			isa = PBXGroup;
 			children = (
+				237F6C3219C889ED008C31E6 /* Controller */,
+				237F6C3119C889E2008C31E6 /* View */,
+				237F6C3019C889D3008C31E6 /* Model */,
 				237F6C0A19C886BB008C31E6 /* DRAppDelegate.h */,
 				237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */,
 				237F6C0D19C886BC008C31E6 /* Main.storyboard */,
-				237F6C1019C886BC008C31E6 /* DRViewController.h */,
-				237F6C1119C886BC008C31E6 /* DRViewController.m */,
 				237F6C1319C886BC008C31E6 /* Images.xcassets */,
 				237F6C0219C886BB008C31E6 /* Supporting Files */,
 			);
@@ -126,6 +127,8 @@
 		237F6C0219C886BB008C31E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				237F6C3419C88A24008C31E6 /* Library */,
+				237F6C3319C88A1C008C31E6 /* Image */,
 				237F6C0319C886BB008C31E6 /* dribbbleViewer-Info.plist */,
 				237F6C0419C886BB008C31E6 /* InfoPlist.strings */,
 				237F6C0719C886BB008C31E6 /* main.m */,
@@ -150,6 +153,43 @@
 				237F6C2319C886BC008C31E6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		237F6C3019C889D3008C31E6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		237F6C3119C889E2008C31E6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		237F6C3219C889ED008C31E6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				237F6C1119C886BC008C31E6 /* DRViewController.m */,
+				237F6C1019C886BC008C31E6 /* DRViewController.h */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		237F6C3319C88A1C008C31E6 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		237F6C3419C88A24008C31E6 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
