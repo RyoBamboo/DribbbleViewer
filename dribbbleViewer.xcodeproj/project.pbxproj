@@ -21,6 +21,9 @@
 		237F6C1D19C886BC008C31E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFF19C886BB008C31E6 /* UIKit.framework */; };
 		237F6C2519C886BC008C31E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C2319C886BC008C31E6 /* InfoPlist.strings */; };
 		237F6C2719C886BC008C31E6 /* dribbbleViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C2619C886BC008C31E6 /* dribbbleViewerTests.m */; };
+		237F6C3619C88DAD008C31E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6C3519C88DAD008C31E6 /* CoreData.framework */; };
+		23A4C14B19C9A740004917F1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23A4C14919C9A740004917F1 /* Model.xcdatamodeld */; };
+		23A4C15119C9A876004917F1 /* DRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A4C15019C9A876004917F1 /* DRDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,10 @@
 		237F6C2219C886BC008C31E6 /* dribbbleViewerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dribbbleViewerTests-Info.plist"; sourceTree = "<group>"; };
 		237F6C2419C886BC008C31E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		237F6C2619C886BC008C31E6 /* dribbbleViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dribbbleViewerTests.m; sourceTree = "<group>"; };
+		237F6C3519C88DAD008C31E6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		23A4C14A19C9A740004917F1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		23A4C14F19C9A876004917F1 /* DRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRDataManager.h; sourceTree = "<group>"; };
+		23A4C15019C9A876004917F1 /* DRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237F6C3619C88DAD008C31E6 /* CoreData.framework in Frameworks */,
 				237F6BFE19C886BB008C31E6 /* CoreGraphics.framework in Frameworks */,
 				237F6C0019C886BB008C31E6 /* UIKit.framework in Frameworks */,
 				237F6BFC19C886BB008C31E6 /* Foundation.framework in Frameworks */,
@@ -101,6 +109,7 @@
 		237F6BFA19C886BB008C31E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				237F6C3519C88DAD008C31E6 /* CoreData.framework */,
 				237F6BFB19C886BB008C31E6 /* Foundation.framework */,
 				237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */,
 				237F6BFF19C886BB008C31E6 /* UIKit.framework */,
@@ -112,9 +121,9 @@
 		237F6C0119C886BB008C31E6 /* dribbbleViewer */ = {
 			isa = PBXGroup;
 			children = (
+				237F6C3019C889D3008C31E6 /* Model */,
 				237F6C3219C889ED008C31E6 /* Controller */,
 				237F6C3119C889E2008C31E6 /* View */,
-				237F6C3019C889D3008C31E6 /* Model */,
 				237F6C0A19C886BB008C31E6 /* DRAppDelegate.h */,
 				237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */,
 				237F6C0D19C886BC008C31E6 /* Main.storyboard */,
@@ -158,6 +167,9 @@
 		237F6C3019C889D3008C31E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23A4C14919C9A740004917F1 /* Model.xcdatamodeld */,
+				23A4C14F19C9A876004917F1 /* DRDataManager.h */,
+				23A4C15019C9A876004917F1 /* DRDataManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -172,8 +184,8 @@
 		237F6C3219C889ED008C31E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				237F6C1119C886BC008C31E6 /* DRViewController.m */,
 				237F6C1019C886BC008C31E6 /* DRViewController.h */,
+				237F6C1119C886BC008C31E6 /* DRViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -290,9 +302,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A4C15119C9A876004917F1 /* DRDataManager.m in Sources */,
 				237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */,
 				237F6C1219C886BC008C31E6 /* DRViewController.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
+				23A4C14B19C9A740004917F1 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +511,7 @@
 				237F6C2C19C886BC008C31E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		237F6C2D19C886BC008C31E6 /* Build configuration list for PBXNativeTarget "dribbbleViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -505,8 +520,22 @@
 				237F6C2F19C886BC008C31E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		23A4C14919C9A740004917F1 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				23A4C14A19C9A740004917F1 /* Model.xcdatamodel */,
+			);
+			currentVersion = 23A4C14A19C9A740004917F1 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 237F6BF019C886BB008C31E6 /* Project object */;
 }
