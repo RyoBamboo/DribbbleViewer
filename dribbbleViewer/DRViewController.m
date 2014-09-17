@@ -13,12 +13,29 @@
 @end
 
 @implementation DRViewController
+//------------------------------------------------------
+#pragma mark 初期化
+//------------------------------------------------------
+static NSDictionary *dictionary;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSLog(@"%@",[DRDataManager sharedManager].managedObjectContext);
+    // とりあえずAPIたたく
+    NSString *itemUrl = @"http://api.dribbble.com/shots/everyone";
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    [manager GET:itemUrl
+     parameters:nil
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
+             
+             NSLog(@"responseObject: %@", dictionary);
+         }failure:^(AFHTTPRequestOperation *operation, NSError *error){
+             NSLog(@"%@", error);
+         }];
     
 }
 
@@ -28,4 +45,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+//------------------------------------------------------
+#pragma mark PSCollectionView DataSource
+//------------------------------------------------------
+- (NSInteger) numberOfRowsInCollectionView:(PSCollectionView *)collectionView
+{
+    return [dictionary count];
+}
+
+- (CGFloat) collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
+{
+    return 0;
+}
+
+
+- (PSCollectionViewCell *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index
+{
+    return nil;
+}
 @end
