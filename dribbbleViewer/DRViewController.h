@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DRDataManager.h"
 
 @interface DRViewController : UIViewController
 
