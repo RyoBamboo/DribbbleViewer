@@ -20,6 +20,8 @@
 #pragma mark 初期化
 //------------------------------------------------------
 static NSDictionary *dictionary;
+static NSMutableArray *shots;
+
 
 - (void)viewDidLoad
 {
@@ -34,7 +36,8 @@ static NSDictionary *dictionary;
      parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
-             //NSLog(@"responseObject: %@", dictionary);
+             
+             [self setData:dictionary];
          }failure:^(AFHTTPRequestOperation *operation, NSError *error){
              NSLog(@"%@", error);
          }];
@@ -50,6 +53,14 @@ static NSDictionary *dictionary;
     self.collectionView.numColsLandscape = 3;
 }
 
+// とりあえずここで保存
+- (void) setData:(NSDictionary *)data{
+    NSArray *array = [data objectForKey:@"shots"];
+    shots = [NSMutableArray arrayWithArray:array];
+    
+    [_collectionView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -62,22 +73,27 @@ static NSDictionary *dictionary;
 //------------------------------------------------------
 - (NSInteger) numberOfRowsInCollectionView:(PSCollectionView *)collectionView
 {
-    return 8;
+    return [shots count];
 }
 
 - (CGFloat) collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
-    return 80.0f;
+    return [DRCollectionViewCell rowHeightForObject:[shots objectAtIndex:index]];
 }
 
 
 - (PSCollectionViewCell *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index
 {
+    NSDictionary *shot = [shots objectAtIndex:index];
+    
     DRCollectionViewCell *cell;
     cell = (DRCollectionViewCell *)[_collectionView dequeueReusableViewForClass:[DRCollectionViewCell class]];
     if (!cell) {
-        cell = [[DRCollectionViewCell alloc]initWithFrame:CGRectZero];
+        CGFloat height = [DRCollectionViewCell rowHeightForObject:shot];
+        cell = [[DRCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/2 -10, height)];
     }
+    
+    [cell collectionView:_collectionView fillCellWithObject:shot atIndex:index];
     
     return cell;
 }
