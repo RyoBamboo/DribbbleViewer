@@ -7,6 +7,10 @@
 
 @implementation DRCollectionViewCell
 
+
+//-------------------------------------------
+#pragma mark --- 初期化 ---
+//-------------------------------------------
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -14,6 +18,27 @@
         // Initialization code
     }
     return self;
+}
+
+//-------------------------------------------
+#pragma mark --- レイアウト ---
+//-------------------------------------------
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+}
+
+//-------------------------------------------
+#pragma mark --- セルの表示 ---
+//-------------------------------------------
+- (void)collectionView:(PSCollectionView *)collectionView fillCellWithObject:(id)object atIndex:(NSInteger)index
+{
+    
+}
+
++ (CGFloat)rowHeightForObject:(id)object
+{
+    return 0;
 }
 
 @end

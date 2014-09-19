@@ -8,4 +8,7 @@
 
 @interface DRCollectionViewCell : PSCollectionViewCell
 
+// クラスメソッド
++ (CGFloat)rowHeightForObject:(id)object;
+
 @end

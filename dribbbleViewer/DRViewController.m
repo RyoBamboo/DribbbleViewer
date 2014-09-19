@@ -13,6 +13,9 @@
 @end
 
 @implementation DRViewController
+
+@synthesize collectionView = _collectionView;
+
 //------------------------------------------------------
 #pragma mark 初期化
 //------------------------------------------------------
@@ -37,6 +40,14 @@ static NSDictionary *dictionary;
              NSLog(@"%@", error);
          }];
     
+    // PSCollectionViewの呼び出しと設定
+    _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _collectionView.collectionViewDataSource = self;
+    _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    // 列挙する列数
+    self.collectionView.numColsPortrait = 2;
+    self.collectionView.numColsLandscape = 3;
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "DRDataManager.h"
 #import "PSCollectionView.h"
+#import "DRCollectionViewCell.h"
 #import "AFNetworking/AFNetworking.h"
 
 @interface DRViewController : UIViewController <PSCollectionViewDataSource>
+{
+    PSCollectionView *_collectionView;
+}
+
+@property (nonatomic) PSCollectionView *collectionView;
 
 @end
