@@ -13,10 +13,15 @@
 @end
 
 @implementation DRViewController
+
+@synthesize collectionView = _collectionView;
+
 //------------------------------------------------------
 #pragma mark 初期化
 //------------------------------------------------------
 static NSDictionary *dictionary;
+static NSMutableArray *shots;
+
 
 - (void)viewDidLoad
 {
@@ -32,11 +37,28 @@ static NSDictionary *dictionary;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
              
-             NSLog(@"responseObject: %@", dictionary);
+             [self setData:dictionary];
          }failure:^(AFHTTPRequestOperation *operation, NSError *error){
              NSLog(@"%@", error);
          }];
     
+    // PSCollectionViewの呼び出しと設定
+    _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    _collectionView.collectionViewDataSource = self;
+    _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:_collectionView];
+    
+    // 列挙する列数
+    self.collectionView.numColsPortrait = 2;
+    self.collectionView.numColsLandscape = 3;
+}
+
+// とりあえずここで保存
+- (void) setData:(NSDictionary *)data{
+    NSArray *array = [data objectForKey:@"shots"];
+    shots = [NSMutableArray arrayWithArray:array];
+    
+    [_collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,17 +73,28 @@ static NSDictionary *dictionary;
 //------------------------------------------------------
 - (NSInteger) numberOfRowsInCollectionView:(PSCollectionView *)collectionView
 {
-    return [dictionary count];
+    return [shots count];
 }
 
 - (CGFloat) collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
-    return 0;
+    return [DRCollectionViewCell rowHeightForObject:[shots objectAtIndex:index]];
 }
 
 
 - (PSCollectionViewCell *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index
 {
-    return nil;
+    NSDictionary *shot = [shots objectAtIndex:index];
+    
+    DRCollectionViewCell *cell;
+    cell = (DRCollectionViewCell *)[_collectionView dequeueReusableViewForClass:[DRCollectionViewCell class]];
+    if (!cell) {
+        CGFloat height = [DRCollectionViewCell rowHeightForObject:shot];
+        cell = [[DRCollectionViewCell alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/2 -10, height)];
+    }
+    
+    [cell collectionView:_collectionView fillCellWithObject:shot atIndex:index];
+    
+    return cell;
 }
 @end
