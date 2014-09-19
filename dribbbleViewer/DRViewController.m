@@ -34,8 +34,7 @@ static NSDictionary *dictionary;
      parameters:nil
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
-             
-             NSLog(@"responseObject: %@", dictionary);
+             //NSLog(@"responseObject: %@", dictionary);
          }failure:^(AFHTTPRequestOperation *operation, NSError *error){
              NSLog(@"%@", error);
          }];
@@ -44,6 +43,7 @@ static NSDictionary *dictionary;
     _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _collectionView.collectionViewDataSource = self;
     _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:_collectionView];
     
     // 列挙する列数
     self.collectionView.numColsPortrait = 2;
@@ -62,17 +62,23 @@ static NSDictionary *dictionary;
 //------------------------------------------------------
 - (NSInteger) numberOfRowsInCollectionView:(PSCollectionView *)collectionView
 {
-    return [dictionary count];
+    return 8;
 }
 
 - (CGFloat) collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
-    return 0;
+    return 80.0f;
 }
 
 
 - (PSCollectionViewCell *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index
 {
-    return nil;
+    DRCollectionViewCell *cell;
+    cell = (DRCollectionViewCell *)[_collectionView dequeueReusableViewForClass:[DRCollectionViewCell class]];
+    if (!cell) {
+        cell = [[DRCollectionViewCell alloc]initWithFrame:CGRectZero];
+    }
+    
+    return cell;
 }
 @end

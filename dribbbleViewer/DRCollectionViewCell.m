@@ -25,6 +25,7 @@
 //-------------------------------------------
 - (void)layoutSubviews
 {
+    self.backgroundColor = [UIColor blackColor];
     [super layoutSubviews];
 }
 
