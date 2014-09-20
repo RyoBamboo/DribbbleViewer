@@ -44,6 +44,7 @@ static NSMutableArray *shots;
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
              
+             NSLog(@"%@", dictionary);
              [self setData:dictionary];
          }failure:^(AFHTTPRequestOperation *operation, NSError *error){
              NSLog(@"%@", error);
