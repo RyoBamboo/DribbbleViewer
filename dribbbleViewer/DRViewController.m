@@ -17,11 +17,18 @@
 @synthesize collectionView = _collectionView;
 
 //------------------------------------------------------
-#pragma mark 初期化
+#pragma mark --- 初期化 ---
 //------------------------------------------------------
 static NSDictionary *dictionary;
 static NSMutableArray *shots;
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    _isLoading = YES;
+    _pageNum = 1;
+}
 
 - (void)viewDidLoad
 {
@@ -45,6 +52,7 @@ static NSMutableArray *shots;
     // PSCollectionViewの呼び出しと設定
     _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _collectionView.collectionViewDataSource = self;
+    _collectionView.delegate = self;
     _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:_collectionView];
     
@@ -69,7 +77,7 @@ static NSMutableArray *shots;
 
 
 //------------------------------------------------------
-#pragma mark PSCollectionView DataSource
+#pragma mark --- PSCollectionView DataSource ---
 //------------------------------------------------------
 - (NSInteger) numberOfRowsInCollectionView:(PSCollectionView *)collectionView
 {
@@ -96,5 +104,14 @@ static NSMutableArray *shots;
     [cell collectionView:_collectionView fillCellWithObject:shot atIndex:index];
     
     return cell;
+}
+
+//------------------------------------------------------
+#pragma mark --- PSCollectionView DataSource ---
+//------------------------------------------------------
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!_isLoading && _collectionView.contentOffset.y >= (_collectionView.contentSize.height - _collectionView.bounds.size.height)) {
+        _pageNum ++;
+    }
 }
 @end

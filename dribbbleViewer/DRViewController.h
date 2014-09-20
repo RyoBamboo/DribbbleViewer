@@ -12,9 +12,12 @@
 #import "DRCollectionViewCell.h"
 #import "AFNetworking/AFNetworking.h"
 
-@interface DRViewController : UIViewController <PSCollectionViewDataSource>
+@interface DRViewController : UIViewController <PSCollectionViewDataSource, PSCollectionViewDelegate, UIScrollViewDelegate>
 {
     PSCollectionView *_collectionView;
+    
+    NSInteger _pageNum;
+    BOOL _isLoading;
 }
 
 @property (nonatomic) PSCollectionView *collectionView;

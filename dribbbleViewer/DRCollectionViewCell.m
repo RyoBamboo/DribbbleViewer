@@ -40,7 +40,7 @@
 - (void)collectionView:(PSCollectionView *)collectionView fillCellWithObject:(id)object atIndex:(NSInteger)index
 {
     [super collectionView:collectionView fillCellWithObject:object atIndex:index];
-    [_imageView setImageWithURL:[NSURL URLWithString:(NSString *)[object objectForKey:@"image_teaser_url"]]];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:(NSString *)[object objectForKey:@"image_teaser_url"]]];
 }
 
 + (CGFloat)rowHeightForObject:(id)object
