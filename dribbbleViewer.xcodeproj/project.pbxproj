@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 231FBBCD19CDB7BD00223CEE /* DRShot.m */; };
 		2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320367219CA2AF900718E48 /* DRCollectionViewCell.m */; };
 		237F6BFC19C886BB008C31E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFB19C886BB008C31E6 /* Foundation.framework */; };
 		237F6BFE19C886BB008C31E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		231FBBCC19CDB7BD00223CEE /* DRShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShot.h; sourceTree = "<group>"; };
+		231FBBCD19CDB7BD00223CEE /* DRShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShot.m; sourceTree = "<group>"; };
 		2320367119CA2AF900718E48 /* DRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRCollectionViewCell.h; sourceTree = "<group>"; };
 		2320367219CA2AF900718E48 /* DRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRCollectionViewCell.m; sourceTree = "<group>"; };
 		237F6BF819C886BB008C31E6 /* dribbbleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dribbbleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +181,8 @@
 				23A4C14919C9A740004917F1 /* Model.xcdatamodeld */,
 				23A4C14F19C9A876004917F1 /* DRDataManager.h */,
 				23A4C15019C9A876004917F1 /* DRDataManager.m */,
+				231FBBCC19CDB7BD00223CEE /* DRShot.h */,
+				231FBBCD19CDB7BD00223CEE /* DRShot.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -346,6 +351,7 @@
 				237F6C1219C886BC008C31E6 /* DRViewController.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
 				23A4C14B19C9A740004917F1 /* Model.xcdatamodeld in Sources */,
+				231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
