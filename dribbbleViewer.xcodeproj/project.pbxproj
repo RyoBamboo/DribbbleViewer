@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231B966819CDC30B0088E492 /* DRConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 231B966719CDC30B0088E492 /* DRConnector.m */; };
+		231B966B19CDC3540088E492 /* DRResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 231B966A19CDC3540088E492 /* DRResponseParser.m */; };
 		231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 231FBBCD19CDB7BD00223CEE /* DRShot.m */; };
 		2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320367219CA2AF900718E48 /* DRCollectionViewCell.m */; };
 		237F6BFC19C886BB008C31E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFB19C886BB008C31E6 /* Foundation.framework */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		231B966619CDC30B0088E492 /* DRConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRConnector.h; sourceTree = "<group>"; };
+		231B966719CDC30B0088E492 /* DRConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRConnector.m; sourceTree = "<group>"; };
+		231B966919CDC3540088E492 /* DRResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRResponseParser.h; sourceTree = "<group>"; };
+		231B966A19CDC3540088E492 /* DRResponseParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRResponseParser.m; sourceTree = "<group>"; };
 		231FBBCC19CDB7BD00223CEE /* DRShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShot.h; sourceTree = "<group>"; };
 		231FBBCD19CDB7BD00223CEE /* DRShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShot.m; sourceTree = "<group>"; };
 		2320367119CA2AF900718E48 /* DRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRCollectionViewCell.h; sourceTree = "<group>"; };
@@ -183,6 +189,10 @@
 				23A4C15019C9A876004917F1 /* DRDataManager.m */,
 				231FBBCC19CDB7BD00223CEE /* DRShot.h */,
 				231FBBCD19CDB7BD00223CEE /* DRShot.m */,
+				231B966619CDC30B0088E492 /* DRConnector.h */,
+				231B966719CDC30B0088E492 /* DRConnector.m */,
+				231B966919CDC3540088E492 /* DRResponseParser.h */,
+				231B966A19CDC3540088E492 /* DRResponseParser.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -345,7 +355,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231B966B19CDC3540088E492 /* DRResponseParser.m in Sources */,
 				2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */,
+				231B966819CDC30B0088E492 /* DRConnector.m in Sources */,
 				23A4C15119C9A876004917F1 /* DRDataManager.m in Sources */,
 				237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */,
 				237F6C1219C886BC008C31E6 /* DRViewController.m in Sources */,
