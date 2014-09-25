@@ -28,6 +28,7 @@
 		237F6C3619C88DAD008C31E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6C3519C88DAD008C31E6 /* CoreData.framework */; };
 		23A4C14B19C9A740004917F1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23A4C14919C9A740004917F1 /* Model.xcdatamodeld */; };
 		23A4C15119C9A876004917F1 /* DRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A4C15019C9A876004917F1 /* DRDataManager.m */; };
+		23B3EBD719D477300017939F /* DRShotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B3EBD619D477300017939F /* DRShotManager.m */; };
 		E11DCEBE4969460680967043 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017812675C04513BD936BB8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		23A4C14A19C9A740004917F1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		23A4C14F19C9A876004917F1 /* DRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRDataManager.h; sourceTree = "<group>"; };
 		23A4C15019C9A876004917F1 /* DRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRDataManager.m; sourceTree = "<group>"; };
+		23B3EBD519D477300017939F /* DRShotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShotManager.h; sourceTree = "<group>"; };
+		23B3EBD619D477300017939F /* DRShotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShotManager.m; sourceTree = "<group>"; };
 		5017812675C04513BD936BB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C919C5653AB546E591EEB6D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +190,8 @@
 				23A4C14919C9A740004917F1 /* Model.xcdatamodeld */,
 				23A4C14F19C9A876004917F1 /* DRDataManager.h */,
 				23A4C15019C9A876004917F1 /* DRDataManager.m */,
+				23B3EBD519D477300017939F /* DRShotManager.h */,
+				23B3EBD619D477300017939F /* DRShotManager.m */,
 				231FBBCC19CDB7BD00223CEE /* DRShot.h */,
 				231FBBCD19CDB7BD00223CEE /* DRShot.m */,
 				231B966619CDC30B0088E492 /* DRConnector.h */,
@@ -360,6 +365,7 @@
 				231B966819CDC30B0088E492 /* DRConnector.m in Sources */,
 				23A4C15119C9A876004917F1 /* DRDataManager.m in Sources */,
 				237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */,
+				23B3EBD719D477300017939F /* DRShotManager.m in Sources */,
 				237F6C1219C886BC008C31E6 /* DRViewController.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
 				23A4C14B19C9A740004917F1 /* Model.xcdatamodeld in Sources */,

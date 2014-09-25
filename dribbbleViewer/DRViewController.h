@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DRDataManager.h"
+#import "DRResponseParser.h"
 #import "PSCollectionView.h"
 #import "DRCollectionViewCell.h"
 #import "AFNetworking/AFNetworking.h"

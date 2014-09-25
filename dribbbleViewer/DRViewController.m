@@ -35,20 +35,34 @@ static NSMutableArray *shots;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     // とりあえずAPIたたく
-    NSString *itemUrl = @"http://api.dribbble.com/shots/everyone";
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
-    [manager GET:itemUrl
-     parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-             dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
-             
-             NSLog(@"%@", dictionary);
-             [self setData:dictionary];
-         }failure:^(AFHTTPRequestOperation *operation, NSError *error){
-             NSLog(@"%@", error);
-         }];
+    
+    DRResponseParser *perse = [[DRResponseParser alloc]init];
+    [perse getShots:@"everyone" page:@"1"];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    NSString *itemUrl = @"http://api.dribbble.com/shots/everyone";
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+//    
+//    [manager GET:itemUrl
+//     parameters:nil
+//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//             dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
+//             
+//             NSLog(@"%@", dictionary);
+//             [self setData:dictionary];
+//         }failure:^(AFHTTPRequestOperation *operation, NSError *error){
+//             NSLog(@"%@", error);
+//         }];
     
     // PSCollectionViewの呼び出しと設定
     _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
