@@ -2,11 +2,9 @@
 //  DRViewController.m
 //  dribbbleViewer
 //
-//  Created by 竹之下遼 on 2014/09/16.
-//  Copyright (c) 2014年 Ryobamboo. All rights reserved.
-//
 
 #import "DRViewController.h"
+#import "DRConnector.h"
 
 @interface DRViewController ()
 
@@ -25,6 +23,10 @@ static NSMutableArray *shots;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // 情報の取得
+    [[DRConnector sharedConnector]refreshAllShots];
+    
     
     _isLoading = YES;
     _pageNum = 1;

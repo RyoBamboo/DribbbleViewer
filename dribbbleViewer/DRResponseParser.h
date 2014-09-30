@@ -23,6 +23,6 @@ enum {
 
 @property (nonatomic, readonly) int networkState;
 
-- (NSMutableArray *)getShots:(NSString *)category page:(NSString *)page;
+- (void)getShots:(NSString *)category page:(NSString *)page;
 
 @end

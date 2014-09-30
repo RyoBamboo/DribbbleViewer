@@ -24,11 +24,8 @@
 //--------------------------------------
 #pragma mark --- パース ---
 //--------------------------------------
-- (NSMutableArray *)getShots:(NSString *)category page:(NSString *)page
+- (void)getShots:(NSString *)category page:(NSString *)page
 {
-    
-    NSMutableArray *result = [[NSMutableArray alloc]initWithArray:@[]];
-    
     // リクエストの指定
     NSString *url = [NSString stringWithFormat:@"http://api.dribbble.com/shots/%@", category];
     NSDictionary *params = @{@"page": page};
@@ -37,19 +34,20 @@
     [manager GET:url
       parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
           
-         // 取得できたらArray型に変換して返す
+         // 取得できたらパースしてCoreDataに保存
          NSArray *dict = [responseObject objectForKey:@"shots"];
          if ([dict count] > 0) {
-             
-             //個々でCoreDataに保存？
-             
+             [self parse:dict];
          }
       }failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           NSLog(@"Error: %@", error);
       }];
-    
-    return nil;
 }
 
+- (void)parse:(NSArray *)dict
+{
+    // DRShotの作成
+    DRShot *shots;
+}
 
 @end

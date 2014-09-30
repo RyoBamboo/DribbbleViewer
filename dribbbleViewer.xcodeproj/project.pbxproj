@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2304510219DB7DD3006921A1 /* DRShotsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2304510119DB7DD3006921A1 /* DRShotsManager.m */; };
 		231B966819CDC30B0088E492 /* DRConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 231B966719CDC30B0088E492 /* DRConnector.m */; };
 		231B966B19CDC3540088E492 /* DRResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 231B966A19CDC3540088E492 /* DRResponseParser.m */; };
 		231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 231FBBCD19CDB7BD00223CEE /* DRShot.m */; };
@@ -26,9 +27,6 @@
 		237F6C2519C886BC008C31E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C2319C886BC008C31E6 /* InfoPlist.strings */; };
 		237F6C2719C886BC008C31E6 /* dribbbleViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C2619C886BC008C31E6 /* dribbbleViewerTests.m */; };
 		237F6C3619C88DAD008C31E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6C3519C88DAD008C31E6 /* CoreData.framework */; };
-		23A4C14B19C9A740004917F1 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 23A4C14919C9A740004917F1 /* Model.xcdatamodeld */; };
-		23A4C15119C9A876004917F1 /* DRDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A4C15019C9A876004917F1 /* DRDataManager.m */; };
-		23B3EBD719D477300017939F /* DRShotManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23B3EBD619D477300017939F /* DRShotManager.m */; };
 		E11DCEBE4969460680967043 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017812675C04513BD936BB8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2304510019DB7DD3006921A1 /* DRShotsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShotsManager.h; sourceTree = "<group>"; };
+		2304510119DB7DD3006921A1 /* DRShotsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShotsManager.m; sourceTree = "<group>"; };
 		231B966619CDC30B0088E492 /* DRConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRConnector.h; sourceTree = "<group>"; };
 		231B966719CDC30B0088E492 /* DRConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRConnector.m; sourceTree = "<group>"; };
 		231B966919CDC3540088E492 /* DRResponseParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRResponseParser.h; sourceTree = "<group>"; };
@@ -71,11 +71,6 @@
 		237F6C2419C886BC008C31E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		237F6C2619C886BC008C31E6 /* dribbbleViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dribbbleViewerTests.m; sourceTree = "<group>"; };
 		237F6C3519C88DAD008C31E6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		23A4C14A19C9A740004917F1 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		23A4C14F19C9A876004917F1 /* DRDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRDataManager.h; sourceTree = "<group>"; };
-		23A4C15019C9A876004917F1 /* DRDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRDataManager.m; sourceTree = "<group>"; };
-		23B3EBD519D477300017939F /* DRShotManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRShotManager.h; sourceTree = "<group>"; };
-		23B3EBD619D477300017939F /* DRShotManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShotManager.m; sourceTree = "<group>"; };
 		5017812675C04513BD936BB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C919C5653AB546E591EEB6D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,17 +182,14 @@
 		237F6C3019C889D3008C31E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				23A4C14919C9A740004917F1 /* Model.xcdatamodeld */,
-				23A4C14F19C9A876004917F1 /* DRDataManager.h */,
-				23A4C15019C9A876004917F1 /* DRDataManager.m */,
-				23B3EBD519D477300017939F /* DRShotManager.h */,
-				23B3EBD619D477300017939F /* DRShotManager.m */,
 				231FBBCC19CDB7BD00223CEE /* DRShot.h */,
 				231FBBCD19CDB7BD00223CEE /* DRShot.m */,
 				231B966619CDC30B0088E492 /* DRConnector.h */,
 				231B966719CDC30B0088E492 /* DRConnector.m */,
 				231B966919CDC3540088E492 /* DRResponseParser.h */,
 				231B966A19CDC3540088E492 /* DRResponseParser.m */,
+				2304510019DB7DD3006921A1 /* DRShotsManager.h */,
+				2304510119DB7DD3006921A1 /* DRShotsManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -363,12 +355,10 @@
 				231B966B19CDC3540088E492 /* DRResponseParser.m in Sources */,
 				2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */,
 				231B966819CDC30B0088E492 /* DRConnector.m in Sources */,
-				23A4C15119C9A876004917F1 /* DRDataManager.m in Sources */,
 				237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */,
-				23B3EBD719D477300017939F /* DRShotManager.m in Sources */,
 				237F6C1219C886BC008C31E6 /* DRViewController.m in Sources */,
+				2304510219DB7DD3006921A1 /* DRShotsManager.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
-				23A4C14B19C9A740004917F1 /* Model.xcdatamodeld in Sources */,
 				231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,19 +578,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		23A4C14919C9A740004917F1 /* Model.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				23A4C14A19C9A740004917F1 /* Model.xcdatamodel */,
-			);
-			currentVersion = 23A4C14A19C9A740004917F1 /* Model.xcdatamodel */;
-			path = Model.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 237F6BF019C886BB008C31E6 /* Project object */;
 }

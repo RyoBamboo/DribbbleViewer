@@ -2,12 +2,23 @@
 //  DRConnector.h
 //  dribbbleViewer
 //
-//  Created by 竹之下遼 on 2014/09/20.
-//  Copyright (c) 2014年 Ryobamboo. All rights reserved.
-//
 
 #import <Foundation/Foundation.h>
 
 @interface DRConnector : NSObject
+{
+    NSMutableArray *_refreshAllShotParsers;
+}
+
+// プロパティ
+@property (nonatomic, readonly, getter = isNetworkingAccessing) BOOL networkAccessing;
+
+// 初期化
++ (DRConnector *) sharedConnector;
+
+// 登録した全てのショットの更新
+- (BOOL)isRefreshingAllShots;
+- (void)refreshAllShots;
+
 
 @end
