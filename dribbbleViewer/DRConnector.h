@@ -5,6 +5,10 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *DRConnectorDidBeginGetShots;
+extern NSString *DRConnectorInProgressGetShots;
+extern NSString *DRConnectorDidFinishGetShots;
+
 @interface DRConnector : NSObject
 {
     NSMutableArray *_refreshAllShotParsers;

@@ -13,7 +13,7 @@
 }
 
 // プロパティ
-@property (nonatomic) NSMutableArray *shots;
+@property (nonatomic, readonly) NSMutableArray *shots;
 
 // 初期化
 + (DRShotsManager *)sharedManager;

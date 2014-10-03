@@ -25,12 +25,12 @@
 @property (nonatomic) NSInteger viewCount;
 @property (nonatomic) NSInteger commentsCount;
 @property (nonatomic) NSInteger likeCount;
-@property (nonatomic) NSString  *title;
-@property (nonatomic) NSString  *createAt;
-@property (nonatomic) NSString  *description;
-@property (nonatomic) NSString  *imageTeaserURL;
-@property (nonatomic) NSString  *imageURL;
-@property (nonatomic) NSNumber  *width;
-@property (nonatomic) NSNumber  *height;
+@property (nonatomic, strong) NSString  *title;
+@property (nonatomic, strong) NSString  *createAt;
+@property (nonatomic, strong) NSString  *description;
+@property (nonatomic, strong) NSString  *imageTeaserURL;
+@property (nonatomic, strong) NSString  *imageURL;
+@property (nonatomic, strong) NSNumber  *width;
+@property (nonatomic, strong) NSNumber  *height;
 
 @end

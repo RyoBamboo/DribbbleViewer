@@ -4,6 +4,8 @@
 //
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import "DRShot.h"
+#import "DRShotsManager.h"
 
 // ネットワークの状態
 enum {

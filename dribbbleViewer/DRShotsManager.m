@@ -4,7 +4,7 @@
 //
 
 #import "DRShotsManager.h"
-@class DRShot;
+#import "DRShot.h"
 
 @implementation DRShotsManager
 
@@ -24,6 +24,19 @@ static DRShotsManager *sharedInstance = nil;
     return sharedInstance;
 }
 
+- (id)init
+{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    // ショットの初期化
+    _shots = [NSMutableArray array];
+    
+    return self;
+}
+
 //--------------------------------
 #pragma mark --- ショットの操作 ---
 //--------------------------------
@@ -35,7 +48,7 @@ static DRShotsManager *sharedInstance = nil;
         return;
     }
     
-    [shots addObject:shot];
+    [_shots addObject:shot];
 }
 
 // 全削除

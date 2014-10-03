@@ -3,8 +3,7 @@
 //  dribbbleViewer
 //
 #import "DRResponseParser.h"
-#import "DRShot.h"
-#import "DRShotManager.h"
+
 
 @class DRShot;
 
@@ -67,9 +66,11 @@
             shot.height = [value objectForKey:@"height"];
             
             // ショットの保存
+            [[DRShotsManager sharedManager] addShot:shot];
         }
     }
-    NSLog(@"%@", dict);
+    
+    NSLog(@"%lu", (unsigned long)[[DRShotsManager sharedManager].shots count]);
 }
 
 @end
