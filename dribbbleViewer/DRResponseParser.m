@@ -3,6 +3,8 @@
 //  dribbbleViewer
 //
 #import "DRResponseParser.h"
+#import "DRShot.h"
+#import "DRShotManager.h"
 
 @class DRShot;
 
@@ -27,6 +29,7 @@
 - (void)getShots:(NSString *)category page:(NSString *)page
 {
     // リクエストの指定
+    
     NSString *url = [NSString stringWithFormat:@"http://api.dribbble.com/shots/%@", category];
     NSDictionary *params = @{@"page": page};
     
@@ -44,10 +47,29 @@
       }];
 }
 
+
 - (void)parse:(NSArray *)dict
 {
-    // DRShotの作成
-    DRShot *shots;
+    for (NSDictionary *value in dict) {
+        if (value) {
+            // ショット作成
+            DRShot *shot;
+            shot = [[DRShot alloc]init];
+            
+            // 値を取得
+            shot.viewCount = (NSInteger)[value objectForKey:@"views_count"];
+            shot.commentsCount = (NSInteger)[value objectForKey:@"comments_count"];
+            shot.description = (NSString *)[value objectForKey:@"description"];
+            shot.createAt = (NSString *)[value objectForKey:@"created_at"];
+            shot.imageTeaserURL = (NSString *)[value objectForKey:@"image_teaser_url"];
+            shot.imageURL = (NSString *)[value objectForKey:@"image_url"];
+            shot.width = [value objectForKey:@"width"];
+            shot.height = [value objectForKey:@"height"];
+            
+            // ショットの保存
+        }
+    }
+    NSLog(@"%@", dict);
 }
 
 @end

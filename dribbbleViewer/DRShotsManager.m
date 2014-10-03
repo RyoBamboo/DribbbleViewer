@@ -4,6 +4,7 @@
 //
 
 #import "DRShotsManager.h"
+@class DRShot;
 
 @implementation DRShotsManager
 
@@ -22,5 +23,26 @@ static DRShotsManager *sharedInstance = nil;
     
     return sharedInstance;
 }
+
+//--------------------------------
+#pragma mark --- ショットの操作 ---
+//--------------------------------
+// 追加
+- (void)addShot:(DRShot *)shot
+{
+    if (!shot) {
+        NSLog(@"Shot does't exist!");
+        return;
+    }
+    
+    [shots addObject:shot];
+}
+
+// 全削除
+- (void)removeAll
+{
+    [shots removeAllObjects];
+}
+
 
 @end

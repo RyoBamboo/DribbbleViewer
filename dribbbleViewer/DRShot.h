@@ -18,6 +18,19 @@
     NSString *_description;
     NSString *_imageTeaserURL;
     NSString *_imageURL;
+    NSNumber *_width;
+    NSNumber *_height;
 }
+
+@property (nonatomic) NSInteger viewCount;
+@property (nonatomic) NSInteger commentsCount;
+@property (nonatomic) NSInteger likeCount;
+@property (nonatomic) NSString  *title;
+@property (nonatomic) NSString  *createAt;
+@property (nonatomic) NSString  *description;
+@property (nonatomic) NSString  *imageTeaserURL;
+@property (nonatomic) NSString  *imageURL;
+@property (nonatomic) NSNumber  *width;
+@property (nonatomic) NSNumber  *height;
 
 @end

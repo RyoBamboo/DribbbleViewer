@@ -18,4 +18,8 @@
 // 初期化
 + (DRShotsManager *)sharedManager;
 
+// ショットの操作
+- (void)addShot:(DRShot *)shot;
+- (void)removeAll;
+
 @end
