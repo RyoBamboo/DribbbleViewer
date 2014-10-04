@@ -5,9 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
-extern NSString *DRConnectorDidBeginGetShots;
-extern NSString *DRConnectorInProgressGetShots;
-extern NSString *DRConnectorDidFinishGetShots;
+extern  NSString *DRConnectorDidBeginRefreshShots;
+extern  NSString *DRConnectorInProgressRefreshShots;
+extern  NSString *DRConnectorDidFinishRefreshShots;
 
 @interface DRConnector : NSObject
 {

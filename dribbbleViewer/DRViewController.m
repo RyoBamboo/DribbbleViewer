@@ -4,7 +4,8 @@
 //
 
 #import "DRViewController.h"
-#import "DRConnector.h"
+#import "DRShotsManager.h"
+
 
 @interface DRViewController ()
 
@@ -25,11 +26,18 @@ static NSMutableArray *shots;
     [super viewWillAppear:animated];
     
     // 情報の取得
-    [[DRConnector sharedConnector]refreshShots];
-    
     
     _isLoading = YES;
     _pageNum = 1;
+    
+    // 通知の登録
+    NSNotificationCenter *center;
+    center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(connectorDidBeginRefreshShots:) name:DRConnectorDidBeginRefreshShots object:nil];
+    [center addObserver:self selector:@selector(connectorInProgressRefreshShots:) name:DRConnectorInProgressRefreshShots object:nil];
+    [center addObserver:self selector:@selector(connectorDidFinishRefreshShots:) name:DRConnectorDidFinishRefreshShots object:nil];
+    
+    [[DRConnector sharedConnector]refreshShots];
 }
 
 - (void)viewDidLoad
@@ -69,12 +77,14 @@ static NSMutableArray *shots;
 }
 
 // とりあえずここで保存
+/*
 - (void) setData:(NSDictionary *)data{
     NSArray *array = [data objectForKey:@"shots"];
     shots = [NSMutableArray arrayWithArray:array];
     
     [_collectionView reloadData];
 }
+ */
 
 - (void)didReceiveMemoryWarning
 {
@@ -93,13 +103,17 @@ static NSMutableArray *shots;
 
 - (CGFloat) collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index
 {
-    return [DRCollectionViewCell rowHeightForObject:[shots objectAtIndex:index]];
+    
+    DRShot *shot = [[DRShotsManager sharedManager].shots objectAtIndex:index];
+    return [DRCollectionViewCell rowHeightForObject:shot];
+   // return [DRCollectionViewCell rowHeightForObject:[shots objectAtIndex:index]];
 }
 
 
 - (PSCollectionViewCell *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index
 {
-    NSDictionary *shot = [shots objectAtIndex:index];
+    
+    DRShot *shot = [[DRShotsManager sharedManager].shots objectAtIndex:index];
     
     DRCollectionViewCell *cell;
     cell = (DRCollectionViewCell *)[_collectionView dequeueReusableViewForClass:[DRCollectionViewCell class]];
@@ -120,5 +134,25 @@ static NSMutableArray *shots;
     if (!_isLoading && _collectionView.contentOffset.y >= (_collectionView.contentSize.height - _collectionView.bounds.size.height)) {
         _pageNum ++;
     }
+}
+
+
+//------------------------------------------------------
+#pragma mark --- DRConnector NSNotification ---
+//------------------------------------------------------
+- (void)connectorDidBeginRefreshShots:(NSNotification *)notification
+{
+    NSLog(@"begin!!");
+}
+
+- (void)connectorInProgressRefreshShots:(NSNotification *)notification
+{
+    NSLog(@"InProgress!!");
+}
+
+- (void)connectorDidFinishRefreshShots:(NSNotification *)notification
+{
+    [self.collectionView reloadData];
+    NSLog(@"Finish!!");
 }
 @end

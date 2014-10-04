@@ -21,10 +21,24 @@ enum {
 @interface DRResponseParser : NSObject
 {
     int _networkState;
+    
+    DRShotsManager *_parsedShot;
+    NSMutableArray *_shots;
 }
 
 @property (nonatomic, readonly) int networkState;
+@property (nonatomic, assign) id delegate;
+@property (retain) DRShotsManager *parsedShot;
 
+// パース
 - (void)getShots:(NSString *)category page:(NSString *)page;
+
+// デリゲートメソッド
+
+@end
+
+@interface NSObject (DRResponseParserDelegate)
+
+- (void)parserDidFinishLoading:(DRResponseParser *)parser;
 
 @end

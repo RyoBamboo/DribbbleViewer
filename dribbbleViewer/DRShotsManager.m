@@ -49,6 +49,7 @@ static DRShotsManager *sharedInstance = nil;
     }
     
     [_shots addObject:shot];
+    
 }
 
 // 全削除

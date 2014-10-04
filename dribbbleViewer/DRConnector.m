@@ -8,6 +8,10 @@
 #import "DRShotsManager.h"
 #import "DRShot.h"
 
+NSString *DRConnectorDidBeginRefreshShots = @"DRConnectionDidBeginRefreshShots";
+NSString *DRConnectorInProgressRefreshShots = @"DRConnectionInProgressRefreshShots";
+NSString *DRConnectorDidFinishRefreshShots = @"DRConnectionDidFinishRefreshShots";
+
 @implementation DRConnector
 
 //--------------------------------------------------
@@ -71,6 +75,7 @@ static DRConnector *sharedInstance = nil;
     // レスポンスパーサの作成
     DRResponseParser *parser;
     parser = [[DRResponseParser alloc]init];
+    parser.delegate = self;
     
     // パースの追加
     [_refreshShotParsers addObject:parser];
@@ -83,6 +88,21 @@ static DRConnector *sharedInstance = nil;
         [self willChangeValueForKey:@"networkAccessing"];
         [self didChangeValueForKey:@"networkAccessing"];
     }
+    
+    // 通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:DRConnectorDidBeginRefreshShots object:self];
+}
+
+
+//--------------------------------------------------
+#pragma mark --- DRResponseParser Delegate ---
+//--------------------------------------------------
+- (void)parserDidFinishLoading:(DRResponseParser *)parser
+{
+    [[DRShotsManager sharedManager].shots setArray:parser.parsedShot.shots];
+    
+    // 通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:DRConnectorDidFinishRefreshShots object:self];
 }
 
 @end
