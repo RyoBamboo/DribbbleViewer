@@ -15,9 +15,22 @@
     NSInteger _likeCount;
     NSString *_title;
     NSString *_createAt;
-    NSString *_description;
+   // NSString *_description;
     NSString *_imageTeaserURL;
     NSString *_imageURL;
+    NSNumber *_width;
+    NSNumber *_height;
 }
+
+@property (nonatomic) NSInteger viewCount;
+@property (nonatomic) NSInteger commentsCount;
+@property (nonatomic) NSInteger likeCount;
+@property (nonatomic, strong) NSString  *title;
+@property (nonatomic, strong) NSString  *createAt;
+//@property (nonatomic, strong) NSString  *description;
+@property (nonatomic, strong) NSString  *imageTeaserURL;
+@property (nonatomic, strong) NSString  *imageURL;
+@property (nonatomic, strong) NSNumber  *width;
+@property (nonatomic, strong) NSNumber  *height;
 
 @end

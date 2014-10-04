@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DRDataManager.h"
+#import "DRResponseParser.h"
 #import "PSCollectionView.h"
 #import "DRCollectionViewCell.h"
 #import "AFNetworking/AFNetworking.h"
+#import "DRConnector.h"
 
 @interface DRViewController : UIViewController <PSCollectionViewDataSource, PSCollectionViewDelegate, UIScrollViewDelegate>
 {

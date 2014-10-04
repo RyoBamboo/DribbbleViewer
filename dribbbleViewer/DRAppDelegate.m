@@ -2,17 +2,23 @@
 //  DRAppDelegate.m
 //  dribbbleViewer
 //
-//  Created by 竹之下遼 on 2014/09/16.
-//  Copyright (c) 2014年 Ryobamboo. All rights reserved.
-//
 
 #import "DRAppDelegate.h"
+#import "DRConnector.h"
 
 @implementation DRAppDelegate
 
+
+//--------------------------------------------------------------------------
+#pragma mark --- 初期化 ---
+//--------------------------------------------------------------------------
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    // キー値監視の登録
+    [[DRConnector sharedConnector]
+        addObserver:self forKeyPath:@"networkAccessing" options:0 context:NULL];
+    
     return YES;
 }
 							
@@ -43,4 +49,14 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+//--------------------------------------------------------------------------
+#pragma mark --- NSKeyValueObserving protocol ---
+//--------------------------------------------------------------------------
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    // networkAccessingキーの場合
+    if ([keyPath isEqualToString:@"networkAccessing"]) {
+        NSLog(@"change networkAccessing!!!");
+    }
+}
 @end

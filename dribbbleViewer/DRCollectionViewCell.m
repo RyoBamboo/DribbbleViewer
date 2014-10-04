@@ -5,6 +5,7 @@
 
 #import "DRCollectionViewCell.h"
 #import "SDWebImage/UIImageView+WebCache.h"
+#import "DRShot.h"
 
 @implementation DRCollectionViewCell
 
@@ -39,14 +40,19 @@
 //-------------------------------------------
 - (void)collectionView:(PSCollectionView *)collectionView fillCellWithObject:(id)object atIndex:(NSInteger)index
 {
+    DRShot *shot = (DRShot *)object;
+    
     [super collectionView:collectionView fillCellWithObject:object atIndex:index];
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:(NSString *)[object objectForKey:@"image_teaser_url"]]];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:(NSString *)[shot imageTeaserURL]]];
 }
 
 + (CGFloat)rowHeightForObject:(id)object
 {
-    CGFloat imageHeight = [NSString stringWithFormat:@"%@", [object objectForKey:@"height"]].floatValue;
-    CGFloat imageWidth = [NSString stringWithFormat:@"%@", [object objectForKey:@"width"]].floatValue;
+    // DRShot型に変換
+    DRShot *shot = (DRShot *)object;
+    
+    CGFloat imageHeight = [NSString stringWithFormat:@"%@", [shot height]].floatValue;
+    CGFloat imageWidth = [NSString stringWithFormat:@"%@", [shot width]].floatValue;
     
     return 150 * (imageHeight/imageWidth);
 }
