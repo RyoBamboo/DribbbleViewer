@@ -25,7 +25,7 @@ static NSMutableArray *shots;
     [super viewWillAppear:animated];
     
     // 情報の取得
-    [[DRConnector sharedConnector]refreshAllShots];
+    [[DRConnector sharedConnector]refreshShots];
     
     
     _isLoading = YES;
@@ -36,19 +36,9 @@ static NSMutableArray *shots;
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    // とりあえずAPIたたく
-    
     
     DRResponseParser *perse = [[DRResponseParser alloc]init];
     [perse getShots:@"everyone" page:@"1"];
-    
-    
-    
-    
-    
-    
-    
-    
     
     
 //    NSString *itemUrl = @"http://api.dribbble.com/shots/everyone";
@@ -98,7 +88,7 @@ static NSMutableArray *shots;
 //------------------------------------------------------
 - (NSInteger) numberOfRowsInCollectionView:(PSCollectionView *)collectionView
 {
-    return [shots count];
+    return [[DRShotsManager sharedManager].shots count];
 }
 
 - (CGFloat) collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index

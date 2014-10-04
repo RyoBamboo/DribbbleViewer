@@ -4,6 +4,9 @@
 //
 
 #import "DRConnector.h"
+#import "DRResponseParser.h"
+#import "DRShotsManager.h"
+#import "DRShot.h"
 
 @implementation DRConnector
 
@@ -29,7 +32,7 @@ static DRConnector *sharedInstance = nil;
     }
     
     // インスタンス変数の初期化
-    _refreshAllShotParsers = [NSMutableArray array];
+    _refreshShotParsers = [NSMutableArray array];
     
     return self;
 }
@@ -39,33 +42,47 @@ static DRConnector *sharedInstance = nil;
 //--------------------------------------------------
 - (BOOL)isNetworkAccessing
 {
-    return [_refreshAllShotParsers count] > 0;
+    return [_refreshShotParsers count] > 0;
 }
 
 
 //--------------------------------------------------
 #pragma mark --- ショットの更新 ---
 //--------------------------------------------------
-- (BOOL)isRefreshingAllShots
+- (BOOL)isRefreshingShots
 {
-    return [_refreshAllShotParsers count] > 0;
+    return [_refreshShotParsers count] > 0;
 }
 
-- (void)refreshAllShots
+- (void)refreshShots
 {
-    // 現在の更新状況を確認
-    if ([self isRefreshingAllShots]) {
+    // もし更新中であれば何もしない
+    if ([self isRefreshingShots]) {
         return;
     }
     
     // 現在のネットワークアクセス状況を取得
-    BOOL isNetworkAccessing = self.isNetworkingAccessing;
+    BOOL networkAccessing;
+    networkAccessing = self.networkAccessing;
     
     // CoreDataの初期化
+    [[DRShotsManager sharedManager] removeAll];
+    
+    // レスポンスパーサの作成
+    DRResponseParser *parser;
+    parser = [[DRResponseParser alloc]init];
+    
+    // パースの追加
+    [_refreshShotParsers addObject:parser];
     
     // パース開始
+    [parser getShots:@"everyone" page:@"1"];
     
-    // 通知
+    // networkAccessingの値を変更を通知する
+    if (networkAccessing != self.networkAccessing) {
+        [self willChangeValueForKey:@"networkAccessing"];
+        [self didChangeValueForKey:@"networkAccessing"];
+    }
 }
 
 @end

@@ -69,8 +69,6 @@
             [[DRShotsManager sharedManager] addShot:shot];
         }
     }
-    
-    NSLog(@"%lu", (unsigned long)[[DRShotsManager sharedManager].shots count]);
 }
 
 @end

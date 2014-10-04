@@ -11,18 +11,18 @@ extern NSString *DRConnectorDidFinishGetShots;
 
 @interface DRConnector : NSObject
 {
-    NSMutableArray *_refreshAllShotParsers;
+    NSMutableArray *_refreshShotParsers;
 }
 
 // プロパティ
-@property (nonatomic, readonly, getter = isNetworkingAccessing) BOOL networkAccessing;
+@property (nonatomic, readonly, getter = isNetworkAccessing) BOOL networkAccessing;
 
 // 初期化
 + (DRConnector *) sharedConnector;
 
-// 登録した全てのショットの更新
-- (BOOL)isRefreshingAllShots;
-- (void)refreshAllShots;
+//ショットの更新
+- (BOOL)isRefreshingShots;
+- (void)refreshShots;
 
 
 @end
