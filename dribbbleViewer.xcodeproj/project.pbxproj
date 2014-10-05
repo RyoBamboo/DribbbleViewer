@@ -12,6 +12,7 @@
 		231B966B19CDC3540088E492 /* DRResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 231B966A19CDC3540088E492 /* DRResponseParser.m */; };
 		231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 231FBBCD19CDB7BD00223CEE /* DRShot.m */; };
 		2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320367219CA2AF900718E48 /* DRCollectionViewCell.m */; };
+		234E12C619E1C0020020090E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234E12C519E1C0020020090E /* QuartzCore.framework */; };
 		237F6BFC19C886BB008C31E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFB19C886BB008C31E6 /* Foundation.framework */; };
 		237F6BFE19C886BB008C31E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */; };
 		237F6C0019C886BB008C31E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFF19C886BB008C31E6 /* UIKit.framework */; };
@@ -19,7 +20,7 @@
 		237F6C0819C886BB008C31E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C0719C886BB008C31E6 /* main.m */; };
 		237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */; };
 		237F6C0F19C886BC008C31E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C0D19C886BC008C31E6 /* Main.storyboard */; };
-		237F6C1219C886BC008C31E6 /* DRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C1119C886BC008C31E6 /* DRViewController.m */; };
+		237F6C1219C886BC008C31E6 /* DRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C1119C886BC008C31E6 /* DRListViewController.m */; };
 		237F6C1419C886BC008C31E6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C1319C886BC008C31E6 /* Images.xcassets */; };
 		237F6C1B19C886BC008C31E6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6C1A19C886BC008C31E6 /* XCTest.framework */; };
 		237F6C1C19C886BC008C31E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFB19C886BB008C31E6 /* Foundation.framework */; };
@@ -51,6 +52,7 @@
 		231FBBCD19CDB7BD00223CEE /* DRShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShot.m; sourceTree = "<group>"; };
 		2320367119CA2AF900718E48 /* DRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRCollectionViewCell.h; sourceTree = "<group>"; };
 		2320367219CA2AF900718E48 /* DRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRCollectionViewCell.m; sourceTree = "<group>"; };
+		234E12C519E1C0020020090E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		237F6BF819C886BB008C31E6 /* dribbbleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dribbbleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		237F6BFB19C886BB008C31E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +64,8 @@
 		237F6C0A19C886BB008C31E6 /* DRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRAppDelegate.h; sourceTree = "<group>"; };
 		237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRAppDelegate.m; sourceTree = "<group>"; };
 		237F6C0E19C886BC008C31E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		237F6C1019C886BC008C31E6 /* DRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRViewController.h; sourceTree = "<group>"; };
-		237F6C1119C886BC008C31E6 /* DRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRViewController.m; sourceTree = "<group>"; };
+		237F6C1019C886BC008C31E6 /* DRListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRListViewController.h; sourceTree = "<group>"; };
+		237F6C1119C886BC008C31E6 /* DRListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRListViewController.m; sourceTree = "<group>"; };
 		237F6C1319C886BC008C31E6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		237F6C1919C886BC008C31E6 /* dribbbleViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dribbbleViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		237F6C1A19C886BC008C31E6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234E12C619E1C0020020090E /* QuartzCore.framework in Frameworks */,
 				237F6C3619C88DAD008C31E6 /* CoreData.framework in Frameworks */,
 				237F6BFE19C886BB008C31E6 /* CoreGraphics.framework in Frameworks */,
 				237F6C0019C886BB008C31E6 /* UIKit.framework in Frameworks */,
@@ -124,6 +127,7 @@
 		237F6BFA19C886BB008C31E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				234E12C519E1C0020020090E /* QuartzCore.framework */,
 				237F6C3519C88DAD008C31E6 /* CoreData.framework */,
 				237F6BFB19C886BB008C31E6 /* Foundation.framework */,
 				237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */,
@@ -206,8 +210,8 @@
 		237F6C3219C889ED008C31E6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				237F6C1019C886BC008C31E6 /* DRViewController.h */,
-				237F6C1119C886BC008C31E6 /* DRViewController.m */,
+				237F6C1019C886BC008C31E6 /* DRListViewController.h */,
+				237F6C1119C886BC008C31E6 /* DRListViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -356,7 +360,7 @@
 				2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */,
 				231B966819CDC30B0088E492 /* DRConnector.m in Sources */,
 				237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */,
-				237F6C1219C886BC008C31E6 /* DRViewController.m in Sources */,
+				237F6C1219C886BC008C31E6 /* DRListViewController.m in Sources */,
 				2304510219DB7DD3006921A1 /* DRShotsManager.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
 				231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */,

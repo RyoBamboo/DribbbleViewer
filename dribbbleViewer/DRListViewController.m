@@ -3,15 +3,16 @@
 //  dribbbleViewer
 //
 
-#import "DRViewController.h"
+#import "DRListViewController.h"
 #import "DRShotsManager.h"
+#import "IIViewDeckController.h"
 
 
-@interface DRViewController ()
+@interface DRListViewController ()
 
 @end
 
-@implementation DRViewController
+@implementation DRListViewController
 
 @synthesize collectionView = _collectionView;
 
@@ -21,9 +22,37 @@
 static NSDictionary *dictionary;
 static NSMutableArray *shots;
 
+- (void)_init
+{
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"Shots";
+                    
+}
+
+- (id)init
+{
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+    [self _init];
+    
+    return self;
+}
+
+
+//------------------------------------------------------
+#pragma mark --- ビュー ---
+//------------------------------------------------------
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // 画面を更新する
+    [self _updateNavigationItem:animated];
+    
     
     // ステータスバーを非表示にする
     if( [ UIApplication sharedApplication ].isStatusBarHidden == NO ) {
@@ -51,22 +80,6 @@ static NSMutableArray *shots;
     DRResponseParser *perse = [[DRResponseParser alloc]init];
     [perse getShots:@"everyone" page:@"1"];
     
-    
-//    NSString *itemUrl = @"http://api.dribbble.com/shots/everyone";
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//    
-//    [manager GET:itemUrl
-//     parameters:nil
-//         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//             dictionary = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil] ;
-//             
-//             NSLog(@"%@", dictionary);
-//             [self setData:dictionary];
-//         }failure:^(AFHTTPRequestOperation *operation, NSError *error){
-//             NSLog(@"%@", error);
-//         }];
-    
     // PSCollectionViewの呼び出しと設定
     _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _collectionView.collectionViewDataSource = self;
@@ -79,20 +92,20 @@ static NSMutableArray *shots;
     self.collectionView.numColsLandscape = 3;
 }
 
-// とりあえずここで保存
-/*
-- (void) setData:(NSDictionary *)data{
-    NSArray *array = [data objectForKey:@"shots"];
-    shots = [NSMutableArray arrayWithArray:array];
-    
-    [_collectionView reloadData];
-}
- */
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//------------------------------------------------------
+#pragma mark --- 画面の更新 ---
+//------------------------------------------------------
+- (void)_updateNavigationItem:(BOOL)animated
+{
+    // ナビゲーションアイテムの設定を行う
+    UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self.viewDeckController action:@selector(toggleLeftView)];
+    [self.navigationItem setLeftBarButtonItem:listButton animated:animated];
 }
 
 
