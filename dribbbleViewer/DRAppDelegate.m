@@ -4,7 +4,9 @@
 //
 
 #import "DRAppDelegate.h"
+#import "DRListViewController.h"
 #import "DRConnector.h"
+#import "IIViewDeckController.h"
 
 @implementation DRAppDelegate
 
@@ -19,7 +21,25 @@
     [[DRConnector sharedConnector]
         addObserver:self forKeyPath:@"networkAccessing" options:0 context:NULL];
     
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.rootViewController = [self generateControllerStack];
+    
     return YES;
+}
+
+// IIViewDeckContorllerの設置
+- (IIViewDeckController *)generateControllerStack
+{
+    
+    UIViewController *listViewController = [[DRListViewController alloc]init];
+    listViewController = [[UINavigationController alloc]initWithRootViewController:listViewController];
+    UIViewController *menuViewController = [[UIViewController alloc]init];
+    
+    IIViewDeckController *deckController = [[IIViewDeckController alloc]
+                                            initWithCenterViewController:listViewController
+                                            leftViewController:menuViewController];
+    
+    return deckController;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
