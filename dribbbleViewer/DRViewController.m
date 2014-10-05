@@ -25,7 +25,10 @@ static NSMutableArray *shots;
 {
     [super viewWillAppear:animated];
     
-    // 情報の取得
+    // ステータスバーを非表示にする
+    if( [ UIApplication sharedApplication ].isStatusBarHidden == NO ) {
+        [ UIApplication sharedApplication ].statusBarHidden = YES;
+    }
     
     _isLoading = YES;
     _pageNum = 1;
