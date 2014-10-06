@@ -12,6 +12,7 @@
 		231B966B19CDC3540088E492 /* DRResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 231B966A19CDC3540088E492 /* DRResponseParser.m */; };
 		231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 231FBBCD19CDB7BD00223CEE /* DRShot.m */; };
 		2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320367219CA2AF900718E48 /* DRCollectionViewCell.m */; };
+		2349A32419E248BF0047F71B /* DRSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2349A32319E248BF0047F71B /* DRSideViewController.m */; };
 		234E12C619E1C0020020090E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234E12C519E1C0020020090E /* QuartzCore.framework */; };
 		237F6BFC19C886BB008C31E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFB19C886BB008C31E6 /* Foundation.framework */; };
 		237F6BFE19C886BB008C31E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */; };
@@ -52,6 +53,8 @@
 		231FBBCD19CDB7BD00223CEE /* DRShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShot.m; sourceTree = "<group>"; };
 		2320367119CA2AF900718E48 /* DRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRCollectionViewCell.h; sourceTree = "<group>"; };
 		2320367219CA2AF900718E48 /* DRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRCollectionViewCell.m; sourceTree = "<group>"; };
+		2349A32219E248BF0047F71B /* DRSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRSideViewController.h; sourceTree = "<group>"; };
+		2349A32319E248BF0047F71B /* DRSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRSideViewController.m; sourceTree = "<group>"; };
 		234E12C519E1C0020020090E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		237F6BF819C886BB008C31E6 /* dribbbleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dribbbleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		237F6BFB19C886BB008C31E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -212,6 +215,8 @@
 			children = (
 				237F6C1019C886BC008C31E6 /* DRListViewController.h */,
 				237F6C1119C886BC008C31E6 /* DRListViewController.m */,
+				2349A32219E248BF0047F71B /* DRSideViewController.h */,
+				2349A32319E248BF0047F71B /* DRSideViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -360,6 +365,7 @@
 				2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */,
 				231B966819CDC30B0088E492 /* DRConnector.m in Sources */,
 				237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */,
+				2349A32419E248BF0047F71B /* DRSideViewController.m in Sources */,
 				237F6C1219C886BC008C31E6 /* DRListViewController.m in Sources */,
 				2304510219DB7DD3006921A1 /* DRShotsManager.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
