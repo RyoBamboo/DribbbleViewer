@@ -32,13 +32,19 @@
 - (IIViewDeckController *)generateControllerStack
 {
     
-    UIViewController *listViewController = [[DRListViewController alloc]init];
+    DRListViewController *listViewController = [[DRListViewController alloc]init];
     UIViewController *sideViewController = [[DRSideViewController alloc]init];
+
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:listViewController];
     
-    listViewController = [[UINavigationController alloc]initWithRootViewController:listViewController];
+    // ナビゲーションバーの設定
+    navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.11 green:0.11 blue:0.11 alpha:1.0];
+
     
     IIViewDeckController *deckController = [[IIViewDeckController alloc]
-                                            initWithCenterViewController:listViewController
+                                            initWithCenterViewController:navigationController
                                             leftViewController:sideViewController];
     
     return deckController;
