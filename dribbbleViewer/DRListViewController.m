@@ -24,14 +24,17 @@ static NSMutableArray *shots;
 
 - (void)_init
 {
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"Shots";
+    self.view.backgroundColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.949 alpha:1.0];
+    self.title = @"Everyone";
                     
 }
 
-- (id)init
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super init];
+    NSLog(@"tst");
+          
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    
     if (!self) {
         return nil;
     }
@@ -104,7 +107,8 @@ static NSMutableArray *shots;
 - (void)_updateNavigationItem:(BOOL)animated
 {
     // ナビゲーションアイテムの設定を行う
-    UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self.viewDeckController action:@selector(toggleLeftView)];
+    UIBarButtonItem *listButton = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"logo.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self.viewDeckController action:@selector(toggleLeftView)];
+    
     [self.navigationItem setLeftBarButtonItem:listButton animated:animated];
 }
 
