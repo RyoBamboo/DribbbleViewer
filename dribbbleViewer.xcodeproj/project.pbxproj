@@ -14,6 +14,9 @@
 		2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320367219CA2AF900718E48 /* DRCollectionViewCell.m */; };
 		2349A32419E248BF0047F71B /* DRSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2349A32319E248BF0047F71B /* DRSideViewController.m */; };
 		234E12C619E1C0020020090E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234E12C519E1C0020020090E /* QuartzCore.framework */; };
+		236F90B419E2B0000069B08B /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 236F90B319E2B0000069B08B /* logo.gif */; };
+		236F90B619E2B0F80069B08B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 236F90B519E2B0F80069B08B /* logo.png */; };
+		236F90B819E2BCFA0069B08B /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 236F90B719E2BCFA0069B08B /* logo1.png */; };
 		237F6BFC19C886BB008C31E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFB19C886BB008C31E6 /* Foundation.framework */; };
 		237F6BFE19C886BB008C31E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */; };
 		237F6C0019C886BB008C31E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFF19C886BB008C31E6 /* UIKit.framework */; };
@@ -56,6 +59,9 @@
 		2349A32219E248BF0047F71B /* DRSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRSideViewController.h; sourceTree = "<group>"; };
 		2349A32319E248BF0047F71B /* DRSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRSideViewController.m; sourceTree = "<group>"; };
 		234E12C519E1C0020020090E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		236F90B319E2B0000069B08B /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = logo.gif; path = ../../../../Desktop/logo.gif; sourceTree = "<group>"; };
+		236F90B519E2B0F80069B08B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../Desktop/logo.png; sourceTree = "<group>"; };
+		236F90B719E2BCFA0069B08B /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo1.png; path = ../../../../Desktop/logo1.png; sourceTree = "<group>"; };
 		237F6BF819C886BB008C31E6 /* dribbbleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dribbbleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		237F6BFB19C886BB008C31E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -216,6 +222,7 @@
 				237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */,
 				237F6C1019C886BC008C31E6 /* DRListViewController.h */,
 				237F6C1119C886BC008C31E6 /* DRListViewController.m */,
+				236F90B719E2BCFA0069B08B /* logo1.png */,
 				2349A32219E248BF0047F71B /* DRSideViewController.h */,
 				2349A32319E248BF0047F71B /* DRSideViewController.m */,
 			);
@@ -225,6 +232,8 @@
 		237F6C3319C88A1C008C31E6 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				236F90B319E2B0000069B08B /* logo.gif */,
+				236F90B519E2B0F80069B08B /* logo.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -316,7 +325,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				237F6C1419C886BC008C31E6 /* Images.xcassets in Resources */,
+				236F90B619E2B0F80069B08B /* logo.png in Resources */,
+				236F90B419E2B0000069B08B /* logo.gif in Resources */,
 				237F6C0619C886BB008C31E6 /* InfoPlist.strings in Resources */,
+				236F90B819E2BCFA0069B08B /* logo1.png in Resources */,
 				237F6C0F19C886BC008C31E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

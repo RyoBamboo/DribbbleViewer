@@ -107,15 +107,9 @@ static NSMutableArray *shots;
 - (void)_updateNavigationItem:(BOOL)animated
 {
     // ナビゲーションアイテムの設定を行う
-    UIBarButtonItem *listButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                                target:self.viewDeckController
-                                                                                action:@selector(toggleLeftView)];
+    UIBarButtonItem *listButton = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"logo.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self.viewDeckController action:@selector(toggleLeftView)];
     
-    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                                                                target:self
-                                                                                action:nil];
     [self.navigationItem setLeftBarButtonItem:listButton animated:animated];
-    [self.navigationItem setRightBarButtonItem:refreshButton animated:animated];
 }
 
 
