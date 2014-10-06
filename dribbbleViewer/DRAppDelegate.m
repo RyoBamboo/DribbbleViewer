@@ -5,6 +5,7 @@
 
 #import "DRAppDelegate.h"
 #import "DRListViewController.h"
+#import "DRSideViewController.h"
 #import "DRConnector.h"
 #import "IIViewDeckController.h"
 
@@ -32,12 +33,13 @@
 {
     
     UIViewController *listViewController = [[DRListViewController alloc]init];
+    UIViewController *sideViewController = [[DRSideViewController alloc]init];
+    
     listViewController = [[UINavigationController alloc]initWithRootViewController:listViewController];
-    UIViewController *menuViewController = [[UIViewController alloc]init];
     
     IIViewDeckController *deckController = [[IIViewDeckController alloc]
                                             initWithCenterViewController:listViewController
-                                            leftViewController:menuViewController];
+                                            leftViewController:sideViewController];
     
     return deckController;
 }
