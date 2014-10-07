@@ -12,18 +12,15 @@
 		231B966B19CDC3540088E492 /* DRResponseParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 231B966A19CDC3540088E492 /* DRResponseParser.m */; };
 		231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 231FBBCD19CDB7BD00223CEE /* DRShot.m */; };
 		2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320367219CA2AF900718E48 /* DRCollectionViewCell.m */; };
-		2349A32419E248BF0047F71B /* DRSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2349A32319E248BF0047F71B /* DRSideViewController.m */; };
 		234E12C619E1C0020020090E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 234E12C519E1C0020020090E /* QuartzCore.framework */; };
 		236F90B419E2B0000069B08B /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 236F90B319E2B0000069B08B /* logo.gif */; };
 		236F90B619E2B0F80069B08B /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 236F90B519E2B0F80069B08B /* logo.png */; };
-		236F90B819E2BCFA0069B08B /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 236F90B719E2BCFA0069B08B /* logo1.png */; };
 		237F6BFC19C886BB008C31E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFB19C886BB008C31E6 /* Foundation.framework */; };
 		237F6BFE19C886BB008C31E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */; };
 		237F6C0019C886BB008C31E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6BFF19C886BB008C31E6 /* UIKit.framework */; };
 		237F6C0619C886BB008C31E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C0419C886BB008C31E6 /* InfoPlist.strings */; };
 		237F6C0819C886BB008C31E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C0719C886BB008C31E6 /* main.m */; };
 		237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */; };
-		237F6C0F19C886BC008C31E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C0D19C886BC008C31E6 /* Main.storyboard */; };
 		237F6C1219C886BC008C31E6 /* DRListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C1119C886BC008C31E6 /* DRListViewController.m */; };
 		237F6C1419C886BC008C31E6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C1319C886BC008C31E6 /* Images.xcassets */; };
 		237F6C1B19C886BC008C31E6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6C1A19C886BC008C31E6 /* XCTest.framework */; };
@@ -32,6 +29,8 @@
 		237F6C2519C886BC008C31E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 237F6C2319C886BC008C31E6 /* InfoPlist.strings */; };
 		237F6C2719C886BC008C31E6 /* dribbbleViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C2619C886BC008C31E6 /* dribbbleViewerTests.m */; };
 		237F6C3619C88DAD008C31E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6C3519C88DAD008C31E6 /* CoreData.framework */; };
+		23E215C319E380BA0090507A /* DRTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E215C219E380BA0090507A /* DRTabBarController.m */; };
+		23E215C619E3C93E0090507A /* DRTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E215C519E3C93E0090507A /* DRTabBar.m */; };
 		E11DCEBE4969460680967043 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017812675C04513BD936BB8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -56,12 +55,9 @@
 		231FBBCD19CDB7BD00223CEE /* DRShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRShot.m; sourceTree = "<group>"; };
 		2320367119CA2AF900718E48 /* DRCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRCollectionViewCell.h; sourceTree = "<group>"; };
 		2320367219CA2AF900718E48 /* DRCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRCollectionViewCell.m; sourceTree = "<group>"; };
-		2349A32219E248BF0047F71B /* DRSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRSideViewController.h; sourceTree = "<group>"; };
-		2349A32319E248BF0047F71B /* DRSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRSideViewController.m; sourceTree = "<group>"; };
 		234E12C519E1C0020020090E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		236F90B319E2B0000069B08B /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = logo.gif; path = ../../../../Desktop/logo.gif; sourceTree = "<group>"; };
 		236F90B519E2B0F80069B08B /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = ../../../../Desktop/logo.png; sourceTree = "<group>"; };
-		236F90B719E2BCFA0069B08B /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo1.png; path = ../../../../Desktop/logo1.png; sourceTree = "<group>"; };
 		237F6BF819C886BB008C31E6 /* dribbbleViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dribbbleViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		237F6BFB19C886BB008C31E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		237F6BFD19C886BB008C31E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,7 +68,6 @@
 		237F6C0919C886BB008C31E6 /* dribbbleViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dribbbleViewer-Prefix.pch"; sourceTree = "<group>"; };
 		237F6C0A19C886BB008C31E6 /* DRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRAppDelegate.h; sourceTree = "<group>"; };
 		237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRAppDelegate.m; sourceTree = "<group>"; };
-		237F6C0E19C886BC008C31E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		237F6C1019C886BC008C31E6 /* DRListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRListViewController.h; sourceTree = "<group>"; };
 		237F6C1119C886BC008C31E6 /* DRListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRListViewController.m; sourceTree = "<group>"; };
 		237F6C1319C886BC008C31E6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -82,6 +77,10 @@
 		237F6C2419C886BC008C31E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		237F6C2619C886BC008C31E6 /* dribbbleViewerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dribbbleViewerTests.m; sourceTree = "<group>"; };
 		237F6C3519C88DAD008C31E6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		23E215C119E380BA0090507A /* DRTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRTabBarController.h; sourceTree = "<group>"; };
+		23E215C219E380BA0090507A /* DRTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRTabBarController.m; sourceTree = "<group>"; };
+		23E215C419E3C93E0090507A /* DRTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRTabBar.h; sourceTree = "<group>"; };
+		23E215C519E3C93E0090507A /* DRTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRTabBar.m; sourceTree = "<group>"; };
 		5017812675C04513BD936BB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C919C5653AB546E591EEB6D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,7 +149,6 @@
 		237F6C0119C886BB008C31E6 /* dribbbleViewer */ = {
 			isa = PBXGroup;
 			children = (
-				23CCE6BD19E283D1009145AD /* Resource */,
 				237F6C3019C889D3008C31E6 /* Model */,
 				237F6C3219C889ED008C31E6 /* Controller */,
 				237F6C3119C889E2008C31E6 /* View */,
@@ -162,7 +160,6 @@
 		237F6C0219C886BB008C31E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				237F6C0D19C886BC008C31E6 /* Main.storyboard */,
 				237F6C1319C886BC008C31E6 /* Images.xcassets */,
 				237F6C3319C88A1C008C31E6 /* Image */,
 				237F6C0319C886BB008C31E6 /* dribbbleViewer-Info.plist */,
@@ -211,6 +208,8 @@
 			children = (
 				2320367119CA2AF900718E48 /* DRCollectionViewCell.h */,
 				2320367219CA2AF900718E48 /* DRCollectionViewCell.m */,
+				23E215C419E3C93E0090507A /* DRTabBar.h */,
+				23E215C519E3C93E0090507A /* DRTabBar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -222,9 +221,8 @@
 				237F6C0B19C886BB008C31E6 /* DRAppDelegate.m */,
 				237F6C1019C886BC008C31E6 /* DRListViewController.h */,
 				237F6C1119C886BC008C31E6 /* DRListViewController.m */,
-				236F90B719E2BCFA0069B08B /* logo1.png */,
-				2349A32219E248BF0047F71B /* DRSideViewController.h */,
-				2349A32319E248BF0047F71B /* DRSideViewController.m */,
+				23E215C119E380BA0090507A /* DRTabBarController.h */,
+				23E215C219E380BA0090507A /* DRTabBarController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -236,13 +234,6 @@
 				236F90B519E2B0F80069B08B /* logo.png */,
 			);
 			name = Image;
-			sourceTree = "<group>";
-		};
-		23CCE6BD19E283D1009145AD /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,8 +319,6 @@
 				236F90B619E2B0F80069B08B /* logo.png in Resources */,
 				236F90B419E2B0000069B08B /* logo.gif in Resources */,
 				237F6C0619C886BB008C31E6 /* InfoPlist.strings in Resources */,
-				236F90B819E2BCFA0069B08B /* logo1.png in Resources */,
-				237F6C0F19C886BC008C31E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,11 +374,12 @@
 				2320367319CA2AF900718E48 /* DRCollectionViewCell.m in Sources */,
 				231B966819CDC30B0088E492 /* DRConnector.m in Sources */,
 				237F6C0C19C886BB008C31E6 /* DRAppDelegate.m in Sources */,
-				2349A32419E248BF0047F71B /* DRSideViewController.m in Sources */,
+				23E215C319E380BA0090507A /* DRTabBarController.m in Sources */,
 				237F6C1219C886BC008C31E6 /* DRListViewController.m in Sources */,
 				2304510219DB7DD3006921A1 /* DRShotsManager.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
 				231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */,
+				23E215C619E3C93E0090507A /* DRTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,14 +408,6 @@
 				237F6C0519C886BB008C31E6 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		237F6C0D19C886BC008C31E6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				237F6C0E19C886BC008C31E6 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		237F6C2319C886BC008C31E6 /* InfoPlist.strings */ = {

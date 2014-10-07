@@ -22,7 +22,7 @@ extern  NSString *DRConnectorDidFinishRefreshShots;
 
 //ショットの更新
 - (BOOL)isRefreshingShots;
-- (void)refreshShots;
+- (void)refreshShots:(NSString *)category page:(NSString *)page;
 
 
 @end

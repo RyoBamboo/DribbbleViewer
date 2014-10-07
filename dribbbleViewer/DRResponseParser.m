@@ -58,7 +58,7 @@
 
 - (void)parse:(NSArray *)dict
 {
-    [_shots removeAllObjects];
+    //[_shots removeAllObjects];
     
     for (NSDictionary *value in dict) {
         if (value) {
