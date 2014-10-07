@@ -58,8 +58,6 @@
 
 - (void)parse:(NSArray *)dict
 {
-    //[_shots removeAllObjects];
-    
     for (NSDictionary *value in dict) {
         if (value) {
             // ショット作成

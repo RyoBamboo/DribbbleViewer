@@ -53,8 +53,11 @@
 {
     [super viewWillAppear:animated];
     
+    // shotを初期化する
+    [[DRShotsManager sharedManager].shots removeAllObjects];
+    
     // タイトルを取得する
-    self.shotCategory = self.navigationController.tabBarItem.title;
+    _shotCategory = self.navigationController.tabBarItem.title;
     
     // 画面を更新する
     [self _updateNavigationItem:animated];
@@ -65,7 +68,6 @@
         [ UIApplication sharedApplication ].statusBarHidden = YES;
     }
     
-    _isLoading = YES;
     _pageNum = 1;
     
     // 通知の登録
@@ -75,7 +77,7 @@
     [center addObserver:self selector:@selector(connectorInProgressRefreshShots:) name:DRConnectorInProgressRefreshShots object:nil];
     [center addObserver:self selector:@selector(connectorDidFinishRefreshShots:) name:DRConnectorDidFinishRefreshShots object:nil];
     
-    [[DRConnector sharedConnector]refreshShots:self.shotCategory page:@"1"];
+    [[DRConnector sharedConnector]refreshShots:_shotCategory page:@"1"];
 }
 
 - (void)viewDidLoad
@@ -147,11 +149,15 @@
 }
 
 //------------------------------------------------------
-#pragma mark --- PSCollectionView DataSource ---
+#pragma mark --- UIScrollView DataSource ---
 //------------------------------------------------------
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (!_isLoading && _collectionView.contentOffset.y >= (_collectionView.contentSize.height - _collectionView.bounds.size.height)) {
+    if (_shotCategory &&![[DRConnector sharedConnector] isNetworkAccessing] && _collectionView.contentOffset.y >= (_collectionView.contentSize.height - _collectionView.bounds.size.height)) {
         _pageNum ++;
+        NSString *pageNum = [NSString stringWithFormat:@"%ld", (long)_pageNum];
+        
+        // 次のページの読み込み
+        [[DRConnector sharedConnector] refreshShots:_shotCategory page:pageNum];
     }
 }
 
@@ -161,17 +167,14 @@
 //------------------------------------------------------
 - (void)connectorDidBeginRefreshShots:(NSNotification *)notification
 {
-    NSLog(@"begin!!");
 }
 
 - (void)connectorInProgressRefreshShots:(NSNotification *)notification
 {
-    NSLog(@"InProgress!!");
 }
 
 - (void)connectorDidFinishRefreshShots:(NSNotification *)notification
 {
     [self.collectionView reloadData];
-    NSLog(@"Finish!!");
 }
 @end

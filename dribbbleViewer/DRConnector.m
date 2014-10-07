@@ -70,7 +70,9 @@ static DRConnector *sharedInstance = nil;
     networkAccessing = self.networkAccessing;
     
     // CoreDataの初期化
-    [[DRShotsManager sharedManager] removeAll];
+    if ([page isEqualToString:@"1"]) {
+        [[DRShotsManager sharedManager] removeAll];
+    }
     
     // レスポンスパーサの作成
     DRResponseParser *parser;
@@ -99,7 +101,9 @@ static DRConnector *sharedInstance = nil;
 //--------------------------------------------------
 - (void)parserDidFinishLoading:(DRResponseParser *)parser
 {
-    [[DRShotsManager sharedManager].shots setArray:parser.parsedShot.shots];
+    for (DRShot *shot in parser.parsedShot.shots) {
+        [[DRShotsManager sharedManager].shots addObject:shot];
+    }
     
     // 通知
     [[NSNotificationCenter defaultCenter] postNotificationName:DRConnectorDidFinishRefreshShots object:self];
