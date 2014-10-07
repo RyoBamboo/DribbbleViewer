@@ -14,11 +14,13 @@
 @interface DRListViewController : UIViewController <PSCollectionViewDataSource, PSCollectionViewDelegate, UIScrollViewDelegate>
 {
     PSCollectionView *_collectionView;
+    NSString *_shotCategory;
     
     NSInteger _pageNum;
     BOOL _isLoading;
 }
 
 @property (nonatomic) PSCollectionView *collectionView;
+@property (nonatomic) NSString *shotCategory;
 
 @end

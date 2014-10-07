@@ -58,7 +58,7 @@ static DRConnector *sharedInstance = nil;
     return [_refreshShotParsers count] > 0;
 }
 
-- (void)refreshShots
+- (void)refreshShots:(NSString *)category page:(NSString *)page
 {
     // もし更新中であれば何もしない
     if ([self isRefreshingShots]) {
@@ -81,7 +81,7 @@ static DRConnector *sharedInstance = nil;
     [_refreshShotParsers addObject:parser];
     
     // パース開始
-    [parser getShots:@"everyone" page:@"1"];
+    [parser getShots:category page:page];
     
     // networkAccessingの値を変更を通知する
     if (networkAccessing != self.networkAccessing) {
@@ -103,6 +103,11 @@ static DRConnector *sharedInstance = nil;
     
     // 通知
     [[NSNotificationCenter defaultCenter] postNotificationName:DRConnectorDidFinishRefreshShots object:self];
+    
+    // networkingAccessingの値を変更する
+    [self willChangeValueForKey:@"networkAccessing"];
+    [_refreshShotParsers removeAllObjects];
+    [self didChangeValueForKey:@"networkAccessing"];
 }
 
 @end

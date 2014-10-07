@@ -5,6 +5,7 @@
 
 #import "DRListViewController.h"
 #import "DRShotsManager.h"
+#import "DRConnector.h"
 #import "IIViewDeckController.h"
 
 
@@ -15,25 +16,24 @@
 @implementation DRListViewController
 
 @synthesize collectionView = _collectionView;
+@synthesize shotCategory = _shotCategory;
 
 //------------------------------------------------------
 #pragma mark --- 初期化 ---
 //------------------------------------------------------
-static NSDictionary *dictionary;
-static NSMutableArray *shots;
 
 - (void)_init
 {
+    // NavigationBarの設定
     self.view.backgroundColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.949 alpha:1.0];
-    self.title = @"Everyone";
-                    
+    self.title = @"Dribbble";
+    
+    // タイトルを取得
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    NSLog(@"tst");
-          
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     
     if (!self) {
         return nil;
@@ -52,6 +52,9 @@ static NSMutableArray *shots;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    // タイトルを取得する
+    self.shotCategory = self.navigationController.tabBarItem.title;
     
     // 画面を更新する
     [self _updateNavigationItem:animated];
@@ -72,16 +75,12 @@ static NSMutableArray *shots;
     [center addObserver:self selector:@selector(connectorInProgressRefreshShots:) name:DRConnectorInProgressRefreshShots object:nil];
     [center addObserver:self selector:@selector(connectorDidFinishRefreshShots:) name:DRConnectorDidFinishRefreshShots object:nil];
     
-    [[DRConnector sharedConnector]refreshShots];
+    [[DRConnector sharedConnector]refreshShots:self.shotCategory page:@"1"];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
-    DRResponseParser *perse = [[DRResponseParser alloc]init];
-    [perse getShots:@"everyone" page:@"1"];
     
     // PSCollectionViewの呼び出しと設定
     _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
