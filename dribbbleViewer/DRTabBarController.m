@@ -7,7 +7,6 @@
 //
 
 #import "DRTabBarController.h"
-#import "DRTabBar.h"
 
 @interface DRTabBarController ()
 

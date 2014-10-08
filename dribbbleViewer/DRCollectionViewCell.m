@@ -55,6 +55,7 @@
     CGFloat imageWidth = [NSString stringWithFormat:@"%@", [shot width]].floatValue;
     
     return 150 * (imageHeight/imageWidth);
+    return 0.0f;
 }
 
 @end

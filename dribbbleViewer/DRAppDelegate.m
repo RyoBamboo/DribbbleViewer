@@ -7,7 +7,6 @@
 #import "DRConnector.h"
 #import "DRListViewController.h"
 #import "DRTabBarController.h"
-#import "DRTabBar.h"
 
 @implementation DRAppDelegate
 
