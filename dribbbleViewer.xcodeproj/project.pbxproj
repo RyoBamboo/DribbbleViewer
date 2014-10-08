@@ -30,7 +30,6 @@
 		237F6C2719C886BC008C31E6 /* dribbbleViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 237F6C2619C886BC008C31E6 /* dribbbleViewerTests.m */; };
 		237F6C3619C88DAD008C31E6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237F6C3519C88DAD008C31E6 /* CoreData.framework */; };
 		23E215C319E380BA0090507A /* DRTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E215C219E380BA0090507A /* DRTabBarController.m */; };
-		23E215C619E3C93E0090507A /* DRTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 23E215C519E3C93E0090507A /* DRTabBar.m */; };
 		E11DCEBE4969460680967043 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5017812675C04513BD936BB8 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,8 +78,6 @@
 		237F6C3519C88DAD008C31E6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		23E215C119E380BA0090507A /* DRTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRTabBarController.h; sourceTree = "<group>"; };
 		23E215C219E380BA0090507A /* DRTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRTabBarController.m; sourceTree = "<group>"; };
-		23E215C419E3C93E0090507A /* DRTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRTabBar.h; sourceTree = "<group>"; };
-		23E215C519E3C93E0090507A /* DRTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRTabBar.m; sourceTree = "<group>"; };
 		5017812675C04513BD936BB8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C919C5653AB546E591EEB6D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -208,8 +205,6 @@
 			children = (
 				2320367119CA2AF900718E48 /* DRCollectionViewCell.h */,
 				2320367219CA2AF900718E48 /* DRCollectionViewCell.m */,
-				23E215C419E3C93E0090507A /* DRTabBar.h */,
-				23E215C519E3C93E0090507A /* DRTabBar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -379,7 +374,6 @@
 				2304510219DB7DD3006921A1 /* DRShotsManager.m in Sources */,
 				237F6C0819C886BB008C31E6 /* main.m in Sources */,
 				231FBBCE19CDB7BD00223CEE /* DRShot.m in Sources */,
-				23E215C619E3C93E0090507A /* DRTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

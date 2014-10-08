@@ -68,7 +68,7 @@
             // 値を取得
             shot.viewCount = (NSInteger)[value objectForKey:@"views_count"];
             shot.commentsCount = (NSInteger)[value objectForKey:@"comments_count"];
-      //      shot.description = (NSString *)[value objectForKey:@"description"];
+            // shot.description = (NSString *)[value objectForKey:@"description"];
             shot.createAt = (NSString *)[value objectForKey:@"created_at"];
             shot.imageTeaserURL = (NSString *)[value objectForKey:@"image_teaser_url"];
             shot.imageURL = (NSString *)[value objectForKey:@"image_url"];

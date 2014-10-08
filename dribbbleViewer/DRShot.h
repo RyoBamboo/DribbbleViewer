@@ -9,18 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface DRShot : NSObject
-{
-    NSInteger _viewCount;
-    NSInteger _commentsCount;
-    NSInteger _likeCount;
-    NSString *_title;
-    NSString *_createAt;
-   // NSString *_description;
-    NSString *_imageTeaserURL;
-    NSString *_imageURL;
-    NSNumber *_width;
-    NSNumber *_height;
-}
 
 @property (nonatomic) NSInteger viewCount;
 @property (nonatomic) NSInteger commentsCount;

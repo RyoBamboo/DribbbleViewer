@@ -53,8 +53,6 @@
 {
     [super viewWillAppear:animated];
     
-    // shotを初期化する
-    [[DRShotsManager sharedManager].shots removeAllObjects];
     
     // タイトルを取得する
     _shotCategory = self.navigationController.tabBarItem.title;
@@ -94,6 +92,15 @@
     // 列挙する列数
     self.collectionView.numColsPortrait = 2;
     self.collectionView.numColsLandscape = 3;
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    // shotを初期化する
+    [[DRShotsManager sharedManager].shots removeAllObjects];
+    
 }
 
 - (void)didReceiveMemoryWarning
