@@ -69,11 +69,6 @@ static DRConnector *sharedInstance = nil;
     BOOL networkAccessing;
     networkAccessing = self.networkAccessing;
     
-    // CoreDataの初期化
-    if ([page isEqualToString:@"1"]) {
-        [[DRShotsManager sharedManager] removeAll];
-    }
-    
     // レスポンスパーサの作成
     DRResponseParser *parser;
     parser = [[DRResponseParser alloc]init];

@@ -8,8 +8,6 @@
 
 @implementation DRShotsManager
 
-@synthesize shots = _shots;
-
 //--------------------------------
 #pragma mark --- 初期化 ---
 //--------------------------------
@@ -55,7 +53,7 @@ static DRShotsManager *sharedInstance = nil;
 // 全削除
 - (void)removeAll
 {
-    [shots removeAllObjects];
+    [_shots removeAllObjects];
 }
 
 
