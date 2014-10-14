@@ -44,7 +44,7 @@
     [manager GET:url
       parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
  
-         // 取得できたらパースしてCoreDataに保存
+         // 取得できたらパースして配列に保存
          NSArray *dict = [responseObject objectForKey:@"shots"];
           
          if ([dict count] > 0) {
@@ -68,20 +68,19 @@
             // 値を取得
             shot.viewCount = (NSInteger)[value objectForKey:@"views_count"];
             shot.commentsCount = (NSInteger)[value objectForKey:@"comments_count"];
-            // shot.description = (NSString *)[value objectForKey:@"description"];
             shot.createAt = (NSString *)[value objectForKey:@"created_at"];
             shot.imageTeaserURL = (NSString *)[value objectForKey:@"image_teaser_url"];
             shot.imageURL = (NSString *)[value objectForKey:@"image_url"];
             shot.width = [value objectForKey:@"width"];
             shot.height = [value objectForKey:@"height"];
             shot.viewCount = 1;
-            
-            
-            // ショットの保存
-            //[[DRShotsManager sharedManager] addShot:shot];
         }
     }
     
+#pragma mark ここら辺助長？？？？？？？？？？
+    /*
+     _parsedShotを使う必要性がないかもしれない
+     */
     [_parsedShot.shots setArray:_shots];
     
     if ([_delegate respondsToSelector:@selector(parserDidFinishLoading:)]) {

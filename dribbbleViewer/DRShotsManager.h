@@ -8,9 +8,6 @@
 @class DRShot;
 
 @interface DRShotsManager : NSObject
-{
-    NSMutableArray *shots;
-}
 
 // プロパティ
 @property (nonatomic, readonly) NSMutableArray *shots;

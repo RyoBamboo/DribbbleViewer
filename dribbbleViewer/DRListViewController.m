@@ -6,7 +6,6 @@
 #import "DRListViewController.h"
 #import "DRShotsManager.h"
 #import "DRConnector.h"
-#import "IIViewDeckController.h"
 
 
 @interface DRListViewController ()
@@ -59,7 +58,6 @@
     
     // 画面を更新する
     [self _updateNavigationItem:animated];
-    
     
     // ステータスバーを非表示にする
     if( [ UIApplication sharedApplication ].isStatusBarHidden == NO ) {
@@ -115,9 +113,6 @@
 - (void)_updateNavigationItem:(BOOL)animated
 {
     // ナビゲーションアイテムの設定を行う
-    UIBarButtonItem *listButton = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"logo.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self.viewDeckController action:@selector(toggleLeftView)];
-    
-    [self.navigationItem setLeftBarButtonItem:listButton animated:animated];
 }
 
 
