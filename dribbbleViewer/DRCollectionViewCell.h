@@ -12,6 +12,8 @@
 }
 
 
+
+
 // クラスメソッド
 + (CGFloat)rowHeightForObject:(id)object;
 

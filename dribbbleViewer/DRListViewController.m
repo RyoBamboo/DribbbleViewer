@@ -52,7 +52,7 @@
 {
     [super viewWillAppear:animated];
     
-    
+    NSLog(@"tst");
     // タイトルを取得する
     _shotCategory = self.navigationController.tabBarItem.title;
     
@@ -79,17 +79,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // UIRefreshControlの初期化
+    _refleshController = [[UIRefreshControl alloc]init];
+    [_refleshController addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     
     // PSCollectionViewの呼び出しと設定
     _collectionView = [[PSCollectionView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _collectionView.collectionViewDataSource = self;
     _collectionView.delegate = self;
     _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [_collectionView addSubview:_refleshController];
     [self.view addSubview:_collectionView];
     
     // 列挙する列数
     self.collectionView.numColsPortrait = 2;
     self.collectionView.numColsLandscape = 3;
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -161,6 +167,16 @@
         // 次のページの読み込み
         [[DRConnector sharedConnector] refreshShots:_shotCategory page:pageNum];
     }
+}
+
+
+//------------------------------------------------------
+#pragma mark --- UIRefreshControl Delegate ---
+//------------------------------------------------------
+- (void)refresh {
+    [self viewWillAppear:YES];
+    [[DRShotsManager sharedManager] removeAll];
+    [_refleshController endRefreshing];
 }
 
 
