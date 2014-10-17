@@ -14,6 +14,8 @@
     PSCollectionView *_collectionView;
     NSString *_shotCategory;
     
+    UIRefreshControl *_refleshController;
+    
     NSInteger _pageNum;
     BOOL _isLoading;
 }
